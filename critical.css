@@ -1,0 +1,44 @@
+img:not([src]),
+img:not([src]).blur {
+  visibility: hidden;
+  filter: none;
+  position: relative;
+}
+
+[style*='--aspect-ratio'] > :first-child,
+[data-aspect-ratio] > :first-child {
+  width: 100%;
+}
+
+[style*='--aspect-ratio'] > img,
+[style*='--aspect-ratio'] > picture,
+[style*='--aspect-ratio'] > video,
+[data-aspect-ratio] > img,
+[data-aspect-ratio] > picture [data-aspect-ratio] > video {
+  height: auto;
+}
+
+@supports (--custom: property) {
+  [style*='--aspect-ratio'],
+  [data-aspect-ratio] {
+    position: relative;
+  }
+
+  [style*='--aspect-ratio']::before,
+  [data-aspect-ratio]::before {
+    content: '';
+    display: block;
+    padding-bottom: calc(100% / (var(--aspect-ratio)));
+    background: transparent;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  [style*='--aspect-ratio'] > :first-child,
+  [data-aspect-ratio] > :first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+}
