@@ -1,0 +1,37 @@
+body {
+    background-color: #FDFDFD;
+    padding: 0;
+    margin: 0;
+}
+
+#navbar-amplogo {
+    height: 75px;
+    float: left;
+}
+
+#navbar {
+    padding: 0 17.5% 0 17.5%;
+    overflow: hidden;
+    background-color: #FF2600;
+}
+
+#navbar-links-group {
+    float: right;
+    height: 75px;
+}
+
+.navbar-links {
+    display: inline-block;
+    color: #FDFDFD;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font: bold 20px Orbitron, sans-serif;
+    letter-spacing: 2px;
+    margin-top: 23px;
+}
+
+a:hover {
+    background-color: #FDFDFD;
+    color: #FF2600;
+}
